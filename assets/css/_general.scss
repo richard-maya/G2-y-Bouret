@@ -1,0 +1,128 @@
+/* COLORS
+*
+-----------------------*/
+.white-text{
+    color: white;
+}
+
+.black-text {
+    color: black;
+}
+
+.bouret-blue {
+    color: $bouret-blue;
+}
+
+.bouret-gold {
+    color: $bouret-gold;
+}
+
+
+/* MIXINS
+*
+-----------------------*/
+@mixin transition($time) {
+    transition: all $time ease-out;
+}
+
+
+/* Animations
+*
+-----------------------*/
+.arrow-animation {
+    animation: arrowFrames ease-out 2s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes arrowFrames {
+    0% {
+        transform: translate(0px, -20px);
+        opacity: 0;
+    }
+
+    40% {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0px, -20px);
+        opacity: 0;
+    }
+}
+
+
+/* GENERAL
+*
+-----------------------*/
+section{
+    width: 100%;
+    height: 100%;
+}
+
+.hero{
+    width: 100%;
+    min-height: 100vh;
+}
+
+nav{
+    font-size: 120%;
+    color: $bouret-blue;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    @include transition(0.3s);
+    img{
+        height: 125px;
+        @include transition(0.3s);
+    }
+    &.navbar{
+        background-color: rgba(255,255,255,0) !important;
+
+        .navbar-brand{
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+    }
+    .active{
+        border-bottom: 5px $bouret-gold solid;
+    }
+}
+
+.navbar-small {
+    font-size: 100%;
+    img{
+        height: 80px;
+    }
+    &.navbar {
+        background-color: rgba(255,255,255,1) !important;
+    }
+}
+
+footer{
+    background: $bouret-blue;
+    p{
+        margin-bottom: 0px;
+        font-size: 61.8%;
+        color: white;
+    }
+
+    a{
+        color: $bouret-gold;
+    }
+}
+
+.title-line{
+    height: 7px;
+    width: 68.1%;
+    background-color: $bouret-gold;
+}
+
+#arrow-row {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    i {
+        color: $bouret-gold;
+    }
+}

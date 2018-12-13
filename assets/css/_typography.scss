@@ -1,0 +1,26 @@
+/* TYPOGRAPHY
+*
+-----------------------*/
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('../fonts/wacian/Wacian-Bold.css');
+@import url('../fonts/wacian/Wacian-Light.css');
+@import url('../fonts/wacian/Wacian-regular.css');
+@import url('../fonts/wacian/Wacian-Round.css');
+
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Wacian';
+    font-weight: bold;
+}
+
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 4rem;
+}
+
+.navbar, p, form, button{
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+}

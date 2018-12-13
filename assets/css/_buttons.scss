@@ -1,0 +1,36 @@
+/* BUTTONS
+*
+-----------------------*/
+button.btn {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    &.not-allowed {
+        cursor: not-allowed;
+    }
+}
+
+.btn-bouret {
+    background-color: $bouret-gold;
+    border-color: $bouret-gold;
+    color: $bouret-blue;
+    @include transition(0.3s);
+
+    &:hover,&:focus,&.focus,&:active,&.active {
+        background-color: darken($bouret-gold, 15%);
+        border-color: darken($bouret-gold, 15%);
+    }
+}
+
+.btn-white-outline {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: white;
+    color: white;
+    @include transition(0.3s);
+
+    &:hover,&:focus,&.focus,&:active,&.active {
+        color: black;
+        background-color: rgba(255, 255, 255, 1);
+    }
+}

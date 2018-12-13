@@ -1,0 +1,67 @@
+/* SECTIONS
+*
+-----------------------*/
+section.home-section{
+    background: transparent;
+    position: relative;
+}
+
+
+section.about-section{
+    .right-column{
+        height: 100%;
+        min-height: 50vh;
+        background: #ffffff;
+        background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 29.9%, #2b354c 30%, #2b354c 70%, #ffffff 70.1%, #ffffff 100%);
+        background: -webkit-linear-gradient(left, #ffffff 0%, #ffffff 29.9%, #2b354c 30%, #2b354c 70%, #ffffff 70.1%, #ffffff 100%);
+        background: linear-gradient(to right, #ffffff 0%, #ffffff 29.9%, #2b354c 30%, #2b354c 70%, #ffffff 70.1%, #ffffff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
+        @include media-breakpoint-up(md) {
+            min-height: 100vh;
+        }
+    }
+}
+
+
+section.services-section {
+    background: transparent;
+    p{
+        font-weight: 300;
+    }
+}
+
+
+section.contact-form{
+    .form-wrapper{
+        background: $bouret-blue;
+        width: 100%;
+        min-height: 50vh;
+        box-shadow: 11px 15px 10px 0 rgba(0,0,0,0.5);
+
+        .left-border{
+            position: relative;
+            @include media-breakpoint-up(md) {
+                border-left: 5px solid #7A7E88;
+            }
+            button{
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                width: 100%;
+            }
+        }
+    }
+    .form-control-sm{
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        font-weight: 300;
+    }
+    textarea.form-control{
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 0px;
+        font-weight: 300;
+    }
+}
