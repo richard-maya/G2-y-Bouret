@@ -26,10 +26,44 @@ var wow = new WOW({
 });
 
 
+// COOKIES
+// ------------------------------->
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function testCookie(){
+    var estado = getCookie("cookie-check");
+    if(!estado){
+        $('#cookie-alert').removeClass('d-none');
+    }
+    // document.cookie = "cookie-check=false; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+}
+
+
 // DOCUMENT READY
 // ------------------------------->
 $(document).ready(function () {
     "use strict";
+    // testCookie();
     wow.init();
     // $("p:not(.success-message)").addClass("wow fadeInUp");
     // $("p.success-message").addClass("wow zoomIn");
@@ -43,15 +77,16 @@ $(document).ready(function () {
     $("label").addClass("wow fadeInUp");
     $("img:not(#navbar-brand-logo)").addClass("wow fadeInUp");
     // $("li:not(.nav-item)").addClass("wow fadeInUp");
-    // $("i.fa-facebook-square").addClass("wow fadeInUp");
-    // $("i.fa-twitter").addClass("wow fadeInUp");
 
     var link = document.location.search;
 
     if (link.includes("success")) {
         $('#message-modal').modal('show');
     }
-
-    $('.home-section').parallax({ imageSrc: 'assets/img/g2-y-bouret.png' });
-    $('.services-section').parallax({ imageSrc: 'assets/img/consultoria-gubernamental.png' });
+    if ($('.home-section').length) {
+        $('.home-section').parallax({ imageSrc: 'assets/img/g2-y-bouret.png' });
+    }
+    if ($('.services-section').length) {
+        $('.services-section').parallax({ imageSrc: 'assets/img/consultoria-gubernamental.png' });
+    }
 });

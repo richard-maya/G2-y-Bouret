@@ -126,3 +126,21 @@ footer{
         color: $bouret-gold;
     }
 }
+
+.alert{
+    position: fixed;
+    bottom: 1rem;
+    right: 0px;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+        width: 30%;
+    }
+    font-size: 70%;
+    z-index: 10;
+}
+
+.alert-warning{
+    background-color: $bouret-gold;
+    border-color: $bouret-gold;
+    color: white;
+}
