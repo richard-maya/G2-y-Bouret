@@ -51,12 +51,31 @@ function getCookie(cname) {
 }
 
 function testCookie(){
-    var estado = getCookie("cookie-check");
+    var estado = getCookie("cfg-cookie-check");
     if(!estado){
         $('#cookie-alert').removeClass('d-none');
+        setTimeout(function () {
+            setCookie('cfg-cookie-check', true, 365);
+        }, 3000);
     }
-    // document.cookie = "cookie-check=false; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    // document.cookie = "cfg-cookie-check=false; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 }
+
+
+// FORM VALIDATION
+// ------------------------------->
+$(document).on('blur', '[data-validator]', function () {
+    new Validator($(this), {
+        language: {
+            required: 'Éste campo es requerido.',
+            email: 'Ingresa un correo válido.',
+        }
+    });
+
+    if ($('#mce-FNAME').hasClass("is-valid") && $('#mce-EMAIL').hasClass("is-valid") && $('#mce-MESSAGE').hasClass("is-valid")) {
+        $('#mc-embedded-subscribe').removeAttr("disabled", "disabled");
+    }
+});
 
 
 // DOCUMENT READY
@@ -65,8 +84,8 @@ $(document).ready(function () {
     "use strict";
     // testCookie();
     wow.init();
-    // $("p:not(.success-message)").addClass("wow fadeInUp");
-    // $("p.success-message").addClass("wow zoomIn");
+
+    $("p.success-message").addClass("wow zoomIn");
     $("h6").addClass("wow fadeInUp");
     $("h5").addClass("wow fadeInUp");
     $("h4").addClass("wow fadeInUp");
@@ -76,7 +95,6 @@ $(document).ready(function () {
     $("p").addClass("wow fadeInUp");
     $("label").addClass("wow fadeInUp");
     $("img:not(#navbar-brand-logo)").addClass("wow fadeInUp");
-    // $("li:not(.nav-item)").addClass("wow fadeInUp");
 
     var link = document.location.search;
 

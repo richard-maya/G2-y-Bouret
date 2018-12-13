@@ -6,7 +6,7 @@ button.btn {
     font-weight: 700;
     font-style: normal;
 
-    &.not-allowed {
+    &.not-allowed, &:disabled {
         cursor: not-allowed;
     }
 }

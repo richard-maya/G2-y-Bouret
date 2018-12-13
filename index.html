@@ -191,31 +191,41 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-                <form>
-                    <div class="container-fluid">
-                        <div class="row justify-content-around form-wrapper white-text pt-5">
-                            <div class="col-12 col-md-5 pl-3 pl-md-4">
-                                <h3>CONTÁCTANOS</h3>
-                                <div class="title-line mb-5"></div>
-                                <div class="form-group mb-5">
-                                    <label for="name">Nombre *</label>
-                                    <input type="text" class="form-control form-control-sm" id="name" name="Nombre">
+                <div id="mc_embed_signup">
+                    <form action="https://iconica.us17.list-manage.com/subscribe/post?u=4f4bdc97c1da5cc68289c2430&amp;id=d17191be25" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+                        <div class="container-fluid">
+                            <div class="row justify-content-around form-wrapper white-text pt-5" id="mc_embed_signup_scroll">
+                                <div class="col-12 col-md-5 pl-3 pl-md-4">
+                                    <h3>CONTÁCTANOS</h3>
+                                    <div class="title-line mb-5"></div>
+                                    <div class="form-group mc-field-group mb-5">
+                                        <label for="mce-FNAME">Nombre *</label>
+                                        <input type="text" class="form-control form-control-sm required" value="" name="FNAME" id="mce-FNAME" data-validator="required|min:1|max:50" data-validator-label="Name">
+                                        <div class="form-control-feedback"></div>
+                                    </div>
+                                    <div class="form-group mc-field-group">
+                                        <label for="mce-EMAIL">Correo *</label>
+                                        <input type="email" value="" name="EMAIL" class="required email form-control form-control-sm" id="mce-EMAIL" data-validator="required|email" data-validator-label="Email Address">
+                                        <div class="form-control-feedback"></div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email">Correo *</label>
-                                    <input type="email" class="form-control form-control-sm" id="_replyto">
+                                <div class="col-12 col-md-7 left-border">
+                                    <div class="form-group mc-field-group">
+                                        <label for="mce-MESSAGE">Mensaje *</label>
+                                        <textarea class="form-control required" id="mce-MESSAGE" name="MESSAGE" rows="8" placeholder="Mándanos un mensaje" value="" data-validator="required|min:1" data-validator-label="Message"></textarea>
+                                        <div class="form-control-feedback"></div>
+                                    </div>
+                                    <div id="mce-responses" class="clear">
+                                        <div class="response" id="mce-error-response" style="display:none"></div>
+                                        <div class="response" id="mce-success-response" style="display:none"></div>
+                                    </div>
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4f4bdc97c1da5cc68289c2430_d17191be25" tabindex="-1" value=""></div>
+                                    <button type="submit" class="btn btn-bouret" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" disabled>Enviar Mensaje</button>
                                 </div>
-                            </div>
-                            <div class="col-12 col-md-7 left-border">
-                                <div class="form-group">
-                                    <label for="mensaje">Mensaje *</label>
-                                    <textarea class="form-control" id="mensaje" name="Mensaje" rows="8" placeholder="Escribe aquí"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-bouret">Enviar Mensaje</button>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -227,15 +237,33 @@
 ================================================== -->
 <div class="alert alert-warning alert-dismissible fade show d-none" role="alert" id="cookie-alert">
     Éste sitio web utiliza cookies para mejorar tu experiencia de usuario; así como con fines estadísticos y publicitarios. Al seguir navegando en el sitio estás aceptando nuestra política de cookies. Más información en nuestra <a href="aviso-privacidad.html" title="aviso-privacidad" class="alert-link">Política de Privacidad</a>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="setCookie('cookie-check', true, 365);">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="setCookie('cfg-cookie-check', true, 365);">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
 
 
-<!-- MODAL
+<!-- SUCCESS MESSAGE
 ================================================== -->
-
+<div class="modal fade" id="message-modal" tabindex="-1" role="dialog" aria-labelledby="message-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title jilce-blue" id="message-modal-label">Mensaje Enviado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Tu mensaje ha sido enviado satisfactoriamente. En breve te responderemos.</p>
+                <p class="text-center success-message" data-wow-delay="0.5s"><i class="far fa-check-circle jilce-blue fa-5x"></i></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-jilce" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- FOOTER
@@ -262,6 +290,7 @@
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/jquery-form-validation/dist/jquery.form-validation.min.js"></script>
 <script src="node_modules/wowjs/dist/wow.min.js"></script>
 <script src="node_modules/parallax.js-master/parallax.min.js"></script>
 <script src="node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
