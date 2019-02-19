@@ -72,8 +72,8 @@ $(document).on('blur', '[data-validator]', function () {
         }
     });
 
-    if ($('#mce-FNAME').hasClass("is-valid") && $('#mce-EMAIL').hasClass("is-valid") && $('#mce-MESSAGE').hasClass("is-valid")) {
-        $('#mc-embedded-subscribe').removeAttr("disabled", "disabled");
+    if ($('#nombre').hasClass("is-valid") && $('#correo').hasClass("is-valid") && $('#mensaje').hasClass("is-valid")) {
+        $('#submit').removeAttr("disabled", "disabled");
     }
 });
 

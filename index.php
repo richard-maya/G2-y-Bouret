@@ -1,3 +1,4 @@
+<?php $form_path='assets/formoid/handler.php'; require_once $form_path; ?>
 <!DOCTYPE html>
 <html lang="mx">
 <head>
@@ -6,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <meta http-equiv="Cache-control" content="cache, max-age:604800"> -->
+    <meta http-equiv="Cache-control" content="cache, max-age:604800">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
-    <meta name="copyright" content="Copyright © 2018">
+    <meta name="copyright" content="Copyright © 2019">
     <meta charset="UTF-8">
     
     <!-- TITLE
@@ -27,13 +28,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    
-    <!-- GOOGLE ANALYTICS
-    ================================================== -->
-    
-    <!-- SHARETHIS
-    ================================================== -->
-    <!-- <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c11bd5c1c9857001192291d&product=gdpr-compliance-tool' async='async'></script> -->
     
     <!-- SEO INFO
     ================================================== -->
@@ -223,41 +217,34 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-                <div id="mc_embed_signup">
-                    <form action="https://iconica.us17.list-manage.com/subscribe/post?u=4f4bdc97c1da5cc68289c2430&amp;id=d17191be25" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
-                        <div class="container-fluid">
-                            <div class="row justify-content-around form-wrapper white-text pt-5" id="mc_embed_signup_scroll">
-                                <div class="col-12 col-md-5 pl-3 pl-md-4">
-                                    <h3>CONTÁCTANOS</h3>
-                                    <div class="title-line mb-5"></div>
-                                    <div class="form-group mc-field-group mb-5">
-                                        <label for="mce-FNAME">Nombre *</label>
-                                        <input type="text" class="form-control form-control-sm required" value="" name="FNAME" id="mce-FNAME" data-validator="required|min:1|max:50" data-validator-label="Name">
-                                        <div class="form-control-feedback"></div>
-                                    </div>
-                                    <div class="form-group mc-field-group">
-                                        <label for="mce-EMAIL">Correo *</label>
-                                        <input type="email" value="" name="EMAIL" class="required email form-control form-control-sm" id="mce-EMAIL" data-validator="required|email" data-validator-label="Email Address">
-                                        <div class="form-control-feedback"></div>
-                                    </div>
+                <form class="formoid-metro-cyan" method="POST">
+                    <div class="container-fluid">
+                        <div class="row justify-content-around form-wrapper white-text pt-5">
+                            <div class="col-12 col-md-5 pl-3 pl-md-4">
+                                <h3>CONTÁCTANOS</h3>
+                                <div class="title-line mb-5"></div>
+                                <div class="form-group mc-field-group mb-5">
+                                    <label for="nombre">Nombre *</label>
+                                    <input type="text" class="form-control form-control-sm" name="Nombre" id="nombre" data-validator="required|min:1|max:50" data-validator-label="Name">
+                                    <div class="form-control-feedback"></div>
                                 </div>
-                                <div class="col-12 col-md-7 left-border">
-                                    <div class="form-group mc-field-group">
-                                        <label for="mce-MESSAGE">Mensaje *</label>
-                                        <textarea class="form-control required" id="mce-MESSAGE" name="MESSAGE" rows="8" placeholder="Mándanos un mensaje" value="" data-validator="required|min:1" data-validator-label="Message"></textarea>
-                                        <div class="form-control-feedback"></div>
-                                    </div>
-                                    <div id="mce-responses" class="clear">
-                                        <div class="response" id="mce-error-response" style="display:none"></div>
-                                        <div class="response" id="mce-success-response" style="display:none"></div>
-                                    </div>
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4f4bdc97c1da5cc68289c2430_d17191be25" tabindex="-1" value=""></div>
-                                    <button type="submit" class="btn btn-bouret" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" disabled>Enviar Mensaje</button>
+                                <div class="form-group mc-field-group">
+                                    <label for="correo">Correo *</label>
+                                    <input type="email" name="Correo" class="form-control form-control-sm" id="correo" data-validator="required|email" data-validator-label="Email Address">
+                                    <div class="form-control-feedback"></div>
                                 </div>
                             </div>
+                            <div class="col-12 col-md-7 left-border">
+                                <div class="form-group mc-field-group">
+                                    <label for="mensaje">Mensaje *</label>
+                                    <textarea class="form-control" id="mensaje" name="Mensaje" rows="8" placeholder="Mándanos un mensaje" data-validator="required|min:1" data-validator-label="Message"></textarea>
+                                    <div class="form-control-feedback"></div>
+                                </div>
+                                <input type="submit" class="btn btn-bouret" value="Enviar Mensaje" id="submit" disabled>
+                            </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -304,13 +291,10 @@
     <div class="container py-3">
         <div class="row justify-content-between">
             <div class="col-12 col-md-8">
-                <p><strong>&copy; 2018. CONSULTORÍA FISCAL Y GUBERNAMENTAL G2 Y BOURET S.C.</strong> Todos los derechos
-                    reservados. &nbsp;<a href="aviso-privacidad.html" title="aviso-privacidad">Aviso de Privacidad</a></p>
+                <p><strong>&copy; <?php echo date('Y'); ?>. CONSULTORÍA FISCAL Y GUBERNAMENTAL G2 Y BOURET S.C.</strong> Todos los derechos reservados. &nbsp;<a href="aviso-privacidad.html" title="aviso-privacidad">Aviso de Privacidad</a></p>
             </div>
             <div class="col-12 col-md-4">
-                <p class="text-right">Desarrollado por <a href="https://iconica.mx" target="_blank" rel="author" title="iconica-studio-mx">ICONICA
-                        STUDIO.</a>&nbsp; ¿Necesitas una página web? <a href="https://iconica.mx" target="_blank" rel="author"
-                        title="iconica-studio-mx">Contáctanos</a></p>
+                <p class="text-right">Desarrollado por <a href="https://iconica.mx" target="_blank" rel="author" title="iconica-studio-mx">ICONICA STUDIO.</a>&nbsp; ¿Necesitas una página web? <a href="https://iconica.mx" target="_blank" rel="author" title="iconica-studio-mx">Contáctanos</a></p>
             </div>
         </div>
     </div>

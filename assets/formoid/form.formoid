@@ -1,0 +1,49 @@
+{
+    "elements": [
+        {
+            "label": "Nombre",
+            "name": "Nombre",
+            "hover": "",
+            "required": true,
+            "pattern": "",
+            "fieldSize": "large",
+            "type": "text"
+        },
+        {
+            "label": "Email",
+            "name": "Correo",
+            "hover": "",
+            "required": true,
+            "pattern": "",
+            "fieldSize": "large",
+            "type": "email"
+        },
+        {
+            "label": "Mensaje",
+            "name": "Mensaje",
+            "hover": "",
+            "required": true,
+            "pattern": "",
+            "fieldSize": "large",
+            "type": ""
+        }
+    ],
+    "title": "Contact Form",
+    "template": "metro-cyan",
+    "email": "pedro.bouret@g2ybouret.com.mx",
+    "fontSize": 14,
+    "fontFamily": "\"Open Sans\",\"Helvetica Neue\",\"Helvetica\",Arial,Verdana,sans-serif",
+    "fontColor": "#666666",
+    "width": "480px",
+    "bgcolor": "#dcdee0",
+    "pageColor": "#EBEBEB",
+    "submit": "Contáctanos",
+    "confirm": "redirect",
+    "message": "Thanks for filling out my form!",
+    "redirect": "https://g2ybouret.com.mx/confirmacion.html",
+    "blurBg": false,
+    "injectCSS": "",
+    "feedback": "",
+    "labelType": "label",
+    "elementIcon": false
+}
